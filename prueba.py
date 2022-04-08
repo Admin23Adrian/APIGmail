@@ -59,15 +59,11 @@ def enviarMensaje(service):
      mensaje_enc['to'] = "oyp@scienza.com.ar"
      mensaje_enc['from'] = "adrian23.alarcon@gmail.com"
      mensaje_enc['subject'] = "Prueba API GMAIL Python"
-     
-     # mensaje_enc.attach(MIMEText(email_mensaje, 'plain'))
 
-     # raw_string = base64.urlsafe_b64encode(mensaje_enc.as_bytes()).decode()
      raw_string = base64.urlsafe_b64encode(mensaje_enc.as_bytes()).decode()
 
      message = service.users().messages().send(userId='me', body= {'raw': raw_string}).execute()
      print(message)
-
 
 
 
